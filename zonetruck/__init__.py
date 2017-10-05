@@ -1,4 +1,6 @@
-import dnspython
+import dns.resolver
 
 def main():
-	print ("Hello, world!")
+	answers = dns.resolver.query('dnspython.org', 'MX')
+	for rdata in answers:
+    		print 'Host', rdata.exchange, 'has preference', rdata.preference
