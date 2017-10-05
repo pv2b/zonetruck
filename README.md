@@ -1,3 +1,5 @@
+N.B. This README reflects the desired state of the project. Do not attempt to use the code at this point in time unless you like stuff that's broken.
+
 # zonetruck
 "It's not a series of tubes"
 
