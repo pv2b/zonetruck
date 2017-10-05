@@ -1,6 +1,7 @@
 N.B. This README reflects the desired state of the project. Do not attempt to use the code at this point in time unless you like stuff that's broken.
 
-# zonetruck
+zonetruck
+=========
 "It's not a series of tubes"
 
 Zonetruck is not a series of tubes. It's a magical truck for your DNS zones.
@@ -17,8 +18,9 @@ It can deliver clean zone files to multiple destination systems, using those mod
 
 Zonetruck is simple and secure. It is configured with a single configuration file that fits on your screen. There is no admin panel, no role-based access control, no daemon, no enterprise middleware, no muss, no fuss. All you need is a Scheduled Task (on Windows) or a Cron Job (on Linux). Because Zonetruck needs no access to anything beyond its configuration file and network access to your authoritative DNS servers and your chosen API endpoints, it's really simple to lock down and secure, if you feel like you have to, despite its minimal attack surface.
 
-# Theory of operation
 
+Theory of operation
+===================
 
 When launched by a cron job, zonetruck will read the configuration file specified on the command line. (There is no reason zonetruck might not be launched manually, or even on receiving a notification from a master DNS server. That functionality will probably never be in zonetruck itself, but could be handled by a helper daemon.)
 
@@ -48,11 +50,12 @@ That's all. But, not really. I kinda lied. Because zonetruck is magical, all ope
 
 If something goes wrong, it will throw a log message. Other than that, that's all. Really.
 
-# License
+About the license
+=================
 
 The code is provided under the MIT license, because I believe in as little hassle as possible. If you want to make zonetruck a part of your clusterdumb enterprise bloatware, go right ahead. If you don't want to give your code back, I don't even want your code back. But if you're cool, I know you'll submit a pull request anyway. The last thing I want is for zonetruck to make one fewer sysadmin's life more awesome because of some ridiculous manager who heard something about the GPL being a computer virus.
 
-...
+----
 
 Copyright (c) 2017 Per von Zweigbergk
 
