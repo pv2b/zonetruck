@@ -3,8 +3,10 @@ from zonetruck.WorkManager import WorkManager
 from zonetruck.ZoneUpdater import ZoneUpdater
 from zonetruck.ZoneFilter import ZoneFilter
 from zonetruck.zone_xfer import zone_xfer
+import sys
 
-def main(argv):
+def main(argv=None):
+    argv = argv or sys.argv
     config = yaml.safe_load(open(argv[1], 'r'))
 
     zone_filter = ZoneFilter(config['filter_rules']).filter
@@ -22,5 +24,4 @@ def main(argv):
     work_manager.join()
 
 if __name__ == '__main__':
-    import sys
-    main(sys.argv)
+    main()
