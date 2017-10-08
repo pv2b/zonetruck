@@ -73,7 +73,7 @@ keep your files nicely indented for zonetruck to understand them.
                 - ns1.other.example.com
             zones:
                 - other.example.com
-    filters:
+    filter_rules:
         -
             action: pass
             ip: 192.0.2.192/26
