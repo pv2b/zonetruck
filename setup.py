@@ -82,7 +82,7 @@ setup(
     # pip to create the appropriate form of executable for the target platform.
     entry_points={
         'console_scripts': [
-            'zonetruck=zonetruck:main',
+            'zonetruck=zonetruck.main:main',
         ],
     },
 )
