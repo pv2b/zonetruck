@@ -3,6 +3,7 @@
 See:
 https://github.com/pv2b/zonetruck
 """
+# pylint: skip-file
 
 # Always prefer setuptools over distutils
 from setuptools import setup, find_packages
