@@ -50,6 +50,61 @@ That's all. But, not really. I kinda lied. Because zonetruck is magical, all ope
 
 If something goes wrong, it will throw a log message. Other than that, that's all. Really.
 
+Configuring zonetruck
+=====================
+
+Zonetruck uses YAML for configuration files. Here's an example that should
+be self-explanatory. Note that indentation levels matter, so you need to
+keep your files nicely indented for zonetruck to understand them.
+
+.. code:: yaml
+
+    ---
+    sources:
+        -
+            masters:
+                - ns1.example.com
+                - ns2.example.net
+            zones:
+                - example.com
+                - example.net
+        -
+            masters:
+                - ns1.other.example.com
+            zones:
+                - other.example.com
+    filters:
+        -
+            action: pass
+            ip: 192.0.2.192/26
+        -
+            action: filter
+            ip: 192.0.2.0/24
+        -
+            action: pass
+            ipv6: 2001:db8:1234:5678::/64
+        -
+            action: block
+            ipv6: 2001:db8::/32
+        -
+            action: pass
+            fqdn_regex: '^internal.+\.other\.example\.com\.$'
+        -
+            action: block
+            fqdn_regex: '^internal'
+        -
+            action: block
+            fqdn_regex: '^secret'
+    outputs:
+        -
+            type: zonefile
+            path: /tmp/zonetruck-output-zone
+        -
+            type: random-cloud-service
+            apikey: 12345 # Same as on my luggage
+    ...
+
+
 About the license
 =================
 
